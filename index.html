@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Puzzle Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🧩 Image Puzzle Game</h1>
+        
+        <!-- Upload Section -->
+        <div class="upload-section">
+            <h2>Upload an Image</h2>
+            <input type="file" id="imageInput" accept="image/*" />
+            <button id="uploadBtn" class="btn">Upload Image</button>
+            <div id="preview" class="preview"></div>
+        </div>
+
+        <!-- Game Settings -->
+        <div class="settings-section" id="settingsSection" style="display: none;">
+            <h2>Game Settings</h2>
+            <label for="difficulty">Difficulty (Grid Size):</label>
+            <select id="difficulty">
+                <option value="3">Easy (3x3 = 9 pieces)</option>
+                <option value="4" selected>Medium (4x4 = 16 pieces)</option>
+                <option value="5">Hard (5x5 = 25 pieces)</option>
+            </select>
+            <button id="startBtn" class="btn btn-primary">Start Game</button>
+        </div>
+
+        <!-- Game Section -->
+        <div class="game-section" id="gameSection" style="display: none;">
+            <div class="game-info">
+                <p>Time: <span id="timer">0</span>s</p>
+                <p>Moves: <span id="moves">0</span></p>
+                <button id="resetBtn" class="btn">Reset Game</button>
+            </div>
+
+            <div class="game-container">
+                <!-- Original Image -->
+                <div class="original-image">
+                    <h3>Original Image</h3>
+                    <img id="originalImg" src="" alt="Original" />
+                </div>
+
+                <!-- Puzzle Area -->
+                <div class="puzzle-area">
+                    <h3>Arrange the Pieces</h3>
+                    <div id="puzzleBoard" class="puzzle-board"></div>
+                </div>
+
+                <!-- Pieces Container -->
+                <div class="pieces-container">
+                    <h3>Puzzle Pieces</h3>
+                    <div id="piecesArea" class="pieces-area"></div>
+                </div>
+            </div>
+
+            <div id="winMessage" class="win-message" style="display: none;">
+                <h2>🎉 Congratulations!</h2>
+                <p>You solved the puzzle in <span id="finalTime">0</span>s with <span id="finalMoves">0</span> moves!</p>
+                <button id="playAgainBtn" class="btn btn-primary">Play Again</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
